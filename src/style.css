@@ -182,9 +182,6 @@ hr.socket {
 .button{
     display: flex;
 }
-main {
-    margin-top: 130px;
-}
 .letter-color {
     color: #e81127 !important;
 }
