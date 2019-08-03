@@ -4,6 +4,7 @@ const search = document.getElementById('search');
 const inicio = document.getElementById('inicio');
 const allMovies = document.getElementById('home-view');
 const selectAnoEstreno = document.getElementById('select-ano');
+const ageContainer = document.getElementById('home-age');
 const sliderView = document.getElementById('slider-view');
 const phase1 = document.getElementById('phase-1');
 const phase2 = document.getElementById('phase-2');
@@ -76,7 +77,7 @@ for (let i = 0; i < objMovies.length; i++) {
       });
       // Funcion para mostrar los tipos
      const anoEstreno=paintAno(aux);
-     paintListAno(anoEstreno, selectAnoEstreno);
+     paintListAno(anoEstreno, ageContainer);
      // Funcion de prueba para botones de año
      const selectMenuAge=document.getElementById("select-age");
      selectMenuAge.addEventListener('click', () => {
@@ -130,7 +131,10 @@ const paintAno = (listMovie) => {
 const paintListAno = (data, container) => {
   let template = '';
   for (let i = 0; i < data.length; i++) { 
-    template += `<div class=" button"><button class="btn btn-info" type="sumit" onclick="anio(${data[i]})" id="${data[i]}" value="${data[i]}"> ${data[i].toUpperCase()}</button><div>`;    
+    template += `
+    <div class="button">
+    <button class="btn btn-info" type="sumit" onclick="anio(${data[i]})" id="${data[i]}" value="${data[i]}"> ${data[i].toUpperCase()}</button>
+    <div>`;    
   }
   container.innerHTML = template;
 };
